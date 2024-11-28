@@ -14,15 +14,17 @@ import CartProvider from 'context/cart-provider'
 import CurrencyProvider from 'context/currency-context'
 import ProductListProvider from 'context/product-list-context'
 import { CustomSiteProvider } from 'context/custom-styles-provider'
+import { BuilderHome } from './builderio/BuilderHome'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
+  // <BuilderHome></BuilderHome>
     <Provider store={Store}>
         <AuthProvider>
             <AppContextProvider>
                 <SitesProvider>
-                    <CustomSiteProvider>                    
+                    <CustomSiteProvider>
                         <CartProvider>
                             <CurrencyProvider>
                                 <QuotesProvider>
