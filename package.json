@@ -5,6 +5,7 @@
   "dependencies": {
     "@algolia/autocomplete-js": "^1.7.4",
     "@auth0/auth0-react": "^2.2.3",
+    "@builder.io/react": "^7.0.1",
     "@material-ui/core": "^4.12.4",
     "@mui/material": "^5.10.4",
     "@reduxjs/toolkit": "^1.8.5",
