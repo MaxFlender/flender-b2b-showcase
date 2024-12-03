@@ -54,6 +54,7 @@ import AccountManageUsers from 'pages/account/AccountManageUsers'
 import ResetPassword from 'pages/ResetPassword'
 import ForgotPassword from 'pages/ForgotPassword'
 import SocialLoginCallback from 'pages/SocialLoginCallback'
+import { BuilderHome } from './builderio/BuilderHome'
 
 function App() {
   const dispatch = useDispatch()
@@ -210,6 +211,7 @@ function App() {
           <Route path="*" element={<NoPage />} />
         </Route>
         <Route path="*" element={<InvalidTenant />} />
+        <Route path="builderio" element={<BuilderHome />} />
       </Routes>
     </Router>
   )
