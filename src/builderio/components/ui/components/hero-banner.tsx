@@ -15,8 +15,13 @@ type HeroBannerProps = {
 export default function HeroBanner(props: HeroBannerProps) {
   // const infoAlignment = props.infoAlignment === undefined || props.infoAlignment === "left"
   //   ? 'lg:left-[15%]' : 'lg:right-[15%]';
+  const vidUrl = props.imagePath + '?.mp4'; // hacky cause builder io media url has no indication what it is image or video
   return (
-    <FleHeroBanner title={props.title} description={props.subtitle} category={props.category} />
+    <FleHeroBanner
+      title={props.title}
+      description={props.subtitle}
+      category={props.category}
+      mediaUrl={vidUrl} />
     // <div className={`relative ${props.className}`}>
     //   {renderMedia(props.imagePath, props.mediaType)}
     //   <div className={`w-full flex justify-center items-center overflow-hidden`}>
