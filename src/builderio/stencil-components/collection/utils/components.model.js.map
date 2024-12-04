@@ -1,0 +1,1 @@
+{"version":3,"file":"components.model.js","sourceRoot":"","sources":["../../src/utils/components.model.ts"],"names":[],"mappings":"","sourcesContent":["﻿export type HorizontalAlignment = 'left' | 'right';\n"]}

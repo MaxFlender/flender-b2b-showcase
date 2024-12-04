@@ -1,0 +1,12 @@
+* {
+  font-family: inherit;
+}
+
+:host {
+  display: block;
+  min-width: 12rem;
+  padding: 0.5rem;
+  color: white;
+  text-transform: uppercase;
+  background-color: #227dc6;
+}

@@ -19,28 +19,28 @@ import { BuilderHome } from './builderio/BuilderHome'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  // <BuilderHome></BuilderHome>
-    <Provider store={Store}>
-        <AuthProvider>
-            <AppContextProvider>
-                <SitesProvider>
-                    <CustomSiteProvider>
-                        <CartProvider>
-                            <CurrencyProvider>
-                                <QuotesProvider>
-                                    <LanguageProvider>
-                                        <ContentfulProvider>
-                                            <ProductListProvider>
-                                                <App />
-                                            </ProductListProvider>
-                                        </ContentfulProvider>
-                                    </LanguageProvider>
-                                </QuotesProvider>
-                            </CurrencyProvider>
-                        </CartProvider>
-                    </CustomSiteProvider>
-                </SitesProvider>
-            </AppContextProvider>
-        </AuthProvider>
-    </Provider>
+  <BuilderHome></BuilderHome>
+    // <Provider store={Store}>
+    //     <AuthProvider>
+    //         <AppContextProvider>
+    //             <SitesProvider>
+    //                 <CustomSiteProvider>
+    //                     <CartProvider>
+    //                         <CurrencyProvider>
+    //                             <QuotesProvider>
+    //                                 <LanguageProvider>
+    //                                     <ContentfulProvider>
+    //                                         <ProductListProvider>
+    //                                             <App />
+    //                                         </ProductListProvider>
+    //                                     </ContentfulProvider>
+    //                                 </LanguageProvider>
+    //                             </QuotesProvider>
+    //                         </CurrencyProvider>
+    //                     </CartProvider>
+    //                 </CustomSiteProvider>
+    //             </SitesProvider>
+    //         </AppContextProvider>
+    //     </AuthProvider>
+    // </Provider>
 )

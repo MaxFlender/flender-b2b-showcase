@@ -1,0 +1,1 @@
+{"version":3,"file":"fle-button.model.js","sourceRoot":"","sources":["../../../src/components/fle-button/fle-button.model.ts"],"names":[],"mappings":"","sourcesContent":["﻿export type FleButtonStyle = 'primary' | 'secondary';\nexport type FleButtonAppearance = 'solid' | 'outline';\nexport type FleButtonSize = 'small' | 'medium';\n"]}

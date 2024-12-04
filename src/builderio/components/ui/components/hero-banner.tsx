@@ -1,5 +1,5 @@
+import { FleHeroBanner } from 'builderio/stencil-components/react/components'
 import { HorizontalAlignment, MediaType } from "../utils/ui.model";
-import InfoBoxBlock from "./info-box-block";
 
 type HeroBannerProps = {
   category?: string;
@@ -13,15 +13,16 @@ type HeroBannerProps = {
 }
 
 export default function HeroBanner(props: HeroBannerProps) {
-  const infoAlignment = props.infoAlignment === undefined || props.infoAlignment === "left"
-    ? 'lg:left-[15%]' : 'lg:right-[15%]';
+  // const infoAlignment = props.infoAlignment === undefined || props.infoAlignment === "left"
+  //   ? 'lg:left-[15%]' : 'lg:right-[15%]';
   return (
-    <div className={`relative ${props.className}`}>
-      {renderMedia(props.imagePath, props.mediaType)}
-      <div className={`w-full flex justify-center items-center overflow-hidden`}>
-        <InfoBoxBlock className={`absolute top-1/2 -translate-y-1/2 max-w-xl p-12 ${infoAlignment}`} title={props.title} description={props.subtitle} category={props.category}></InfoBoxBlock>
-      </div>
-    </div>
+    <FleHeroBanner title={props.title} description={props.subtitle} category={props.category} />
+    // <div className={`relative ${props.className}`}>
+    //   {renderMedia(props.imagePath, props.mediaType)}
+    //   <div className={`w-full flex justify-center items-center overflow-hidden`}>
+    //     <InfoBoxBlock className={`absolute top-1/2 -translate-y-1/2 max-w-xl p-12 ${infoAlignment}`} title={props.title} description={props.subtitle} category={props.category}></InfoBoxBlock>
+    //   </div>
+    // </div>
   );
 }
 

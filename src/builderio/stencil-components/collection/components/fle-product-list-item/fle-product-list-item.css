@@ -1,0 +1,30 @@
+* {
+  font-family: inherit;
+}
+
+:host {
+  display: block;
+}
+
+.fle-product-list-item {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 3rem;
+  font-weight: 100;
+  gap: 10px;
+}
+.fle-product-list-item h3 {
+  color: #227dc6;
+}
+.fle-product-list-item a,
+.fle-product-list-item a:link,
+.fle-product-list-item a:visited,
+.fle-product-list-item a:hover,
+.fle-product-list-item a:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
