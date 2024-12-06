@@ -11,6 +11,7 @@ import type { EventName, StencilReactComponent } from '@stencil/react-output-tar
 import { createComponent } from '@stencil/react-output-target/runtime';
 import { FleButton as FleButtonElement, defineCustomElement as defineFleButton } from "../components/fle-button.js";
 import { FleCategory as FleCategoryElement, defineCustomElement as defineFleCategory } from "../components/fle-category.js";
+import { FleGridView as FleGridViewElement, defineCustomElement as defineFleGridView } from "../components/fle-grid-view.js";
 import { FleHeroBanner as FleHeroBannerElement, defineCustomElement as defineFleHeroBanner } from "../components/fle-hero-banner.js";
 import { FleImageInfoTile as FleImageInfoTileElement, defineCustomElement as defineFleImageInfoTile } from "../components/fle-image-info-tile.js";
 import { FleInfo as FleInfoElement, defineCustomElement as defineFleInfo } from "../components/fle-info.js";
@@ -39,6 +40,17 @@ export const FleCategory: StencilReactComponent<FleCategoryElement, FleCategoryE
     react: React,
     events: {} as FleCategoryEvents,
     defineCustomElement: defineFleCategory
+});
+
+type FleGridViewEvents = NonNullable<unknown>;
+
+export const FleGridView: StencilReactComponent<FleGridViewElement, FleGridViewEvents> = /*@__PURE__*/ createComponent<FleGridViewElement, FleGridViewEvents>({
+    tagName: 'fle-grid-view',
+    elementClass: FleGridViewElement,
+    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
+    react: React,
+    events: {} as FleGridViewEvents,
+    defineCustomElement: defineFleGridView
 });
 
 type FleHeroBannerEvents = NonNullable<unknown>;

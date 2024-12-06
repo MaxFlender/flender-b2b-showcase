@@ -1,0 +1,13 @@
+* {
+  font-family: inherit;
+}
+
+:host {
+  display: block;
+}
+
+.fle-grid-view {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}

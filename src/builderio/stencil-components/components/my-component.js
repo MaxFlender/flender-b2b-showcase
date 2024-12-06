@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, h } from './p-59bfa9e0.js';
+import { p as proxyCustomElement, H, h } from './p-d99ec579.js';
 import { f as format } from './p-3c82445c.js';
 
 const myComponentCss = ":host{display:block}";
@@ -17,7 +17,7 @@ const MyComponent$1 = /*@__PURE__*/ proxyCustomElement(class MyComponent extends
         return format(this.first, this.middle, this.last);
     }
     render() {
-        return h("div", { key: '4a601cacf2a74124b8e499b8d4c15fb1610a74ee' }, "Hello, World! I'm ", this.getText());
+        return h("div", { key: 'bde7690fddb2dd37158d98ef38778fa62d42133f' }, "Hello, World! I'm ", this.getText());
     }
     static get style() { return MyComponentStyle0; }
 }, [1, "my-component", {

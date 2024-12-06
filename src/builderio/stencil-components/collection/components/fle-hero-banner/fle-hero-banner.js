@@ -11,7 +11,7 @@ export class FleHeroBanner {
     }
     render() {
         const infoAlignmentClass = this.infoPosition === 'left' ? 'left' : 'right';
-        return (h(Host, { key: '42e04f894822fcaab772965d52071c47ac1d601f', class: "fle-hero-banner" }, h("fle-media", { key: '55c269ab49c6c5b3446641b60dcdb11448724119', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), h("fle-info", { key: 'd22373fc18f3a786d13c9940613f826bf150d6d5', class: `info ${infoAlignmentClass}`, headline: this.headline, category: this.category, description: this.description })));
+        return (h(Host, { key: 'f0ebd615ea6fead84f1c58c0c4f39a0455d84595', class: "fle-hero-banner" }, h("fle-media", { key: '308e042196b4789c5b8eb81137ad011d6abcfc09', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), h("fle-info", { key: '9cfcff81d568a8d8e65d366f90a62ab50bff4fc0', class: `info ${infoAlignmentClass}`, headline: this.headline, category: this.category, description: this.description })));
     }
     static get is() { return "fle-hero-banner"; }
     static get originalStyleUrls() {

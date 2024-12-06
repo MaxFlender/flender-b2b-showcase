@@ -2,6 +2,7 @@
   "entries": [
     "components/fle-button/fle-button.js",
     "components/fle-category/fle-category.js",
+    "components/fle-grid-view/fle-grid-view.js",
     "components/fle-hero-banner/fle-hero-banner.js",
     "components/fle-image-info-tile/fle-image-info-tile.js",
     "components/fle-info/fle-info.js",

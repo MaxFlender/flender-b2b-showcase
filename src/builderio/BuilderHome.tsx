@@ -9,10 +9,14 @@ export function BuilderHome() {
   const [builderContentJson, setBuilderContentJson] = useState(null)
 
   useEffect(() => {
-    builder.get('page', {url: '/home'})
-      .promise().then(setBuilderContentJson)
+    builder.get('page', { url: '/home' }).promise().then(setBuilderContentJson)
   }, [])
 
-  // @ts-ignore
-  return <BuilderComponent model="page" content={builderContentJson}/>
+
+  return (
+    <div className="mt-36"> {/* Hacky cause header from emporix is using position absolut */}
+      {/* @ts-ignore */}
+      <BuilderComponent model="page" content={builderContentJson} />
+    </div>
+  )
 }

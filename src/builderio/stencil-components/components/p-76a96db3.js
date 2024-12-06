@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, h, d as Host } from './p-59bfa9e0.js';
+import { p as proxyCustomElement, H, h, d as Host } from './p-d99ec579.js';
 
 const fleCategoryCss = "*{font-family:inherit}:host{display:block;min-width:12rem;padding:0.5rem;color:white;text-transform:uppercase;background-color:#227dc6}";
 const FleCategoryStyle0 = fleCategoryCss;
@@ -31,4 +31,4 @@ defineCustomElement();
 
 export { FleCategory as F, defineCustomElement as d };
 
-//# sourceMappingURL=p-3f7a6235.js.map
+//# sourceMappingURL=p-76a96db3.js.map

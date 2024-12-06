@@ -1,4 +1,4 @@
-import { F as FleButton$1, d as defineCustomElement$1 } from './p-b9e794f5.js';
+import { F as FleButton$1, d as defineCustomElement$1 } from './p-a5eca8f3.js';
 
 const FleButton = FleButton$1;
 const defineCustomElement = defineCustomElement$1;

@@ -11,7 +11,7 @@ export class FleProductListItem {
         this.mediaAltText = undefined;
     }
     render() {
-        return (h(Host, { key: '9cb36d580d2cc4cf18bffb9e89146e2781f1d5c2', class: "fle-product-list-item" }, h("fle-category", { key: '366e4101072de4378f3f14506d372b3dcf6ec061' }, this.category), h("h3", { key: '92aa1a2b7be9abe59ec0ed478a2163f4ab56cca1' }, this.headline), h("fle-media", { key: '01f114632a5a3744db6ade5fb1881e21b8892622', "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), h("p", { key: 'af82e3471d67634483da68cf3325ec795560ae09' }, this.description), h("fle-button", { key: 'f284ffd381fec189e5250ca6847226aeb1804438', onButtonClicked: () => this.onClicked() }, this.ctaText)));
+        return (h(Host, { key: '03039d81d688906a62bb21388765a741485eaa04', class: "fle-product-list-item" }, h("fle-category", { key: '283817236895b2dd0a301198ebfc4478015979f4' }, this.category), h("h3", { key: 'fa51a311b190bba914366ae905cecfc9e26c0862' }, this.headline), h("fle-media", { key: '1ca7c0dcb366048cecf5943e22a6223a5fac0f1f', "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), h("p", { key: 'a293d42d1703966854f79ffc30d376aaaa2bf4d1' }, this.description), h("fle-button", { key: 'bce08bcb190db0e59c43728a87dcd56386bd8d1c', onButtonClicked: () => this.onClicked() }, this.ctaText)));
     }
     onClicked() {
         this.productClicked.emit();

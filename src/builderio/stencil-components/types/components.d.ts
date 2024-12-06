@@ -17,6 +17,8 @@ export namespace Components {
     }
     interface FleCategory {
     }
+    interface FleGridView {
+    }
     interface FleHeroBanner {
         "buttonUrls": string[];
         "category": string;
@@ -99,6 +101,12 @@ declare global {
         prototype: HTMLFleCategoryElement;
         new (): HTMLFleCategoryElement;
     };
+    interface HTMLFleGridViewElement extends Components.FleGridView, HTMLStencilElement {
+    }
+    var HTMLFleGridViewElement: {
+        prototype: HTMLFleGridViewElement;
+        new (): HTMLFleGridViewElement;
+    };
     interface HTMLFleHeroBannerElement extends Components.FleHeroBanner, HTMLStencilElement {
     }
     var HTMLFleHeroBannerElement: {
@@ -149,6 +157,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "fle-button": HTMLFleButtonElement;
         "fle-category": HTMLFleCategoryElement;
+        "fle-grid-view": HTMLFleGridViewElement;
         "fle-hero-banner": HTMLFleHeroBannerElement;
         "fle-image-info-tile": HTMLFleImageInfoTileElement;
         "fle-info": HTMLFleInfoElement;
@@ -165,6 +174,8 @@ declare namespace LocalJSX {
         "styleType"?: FleButtonStyle;
     }
     interface FleCategory {
+    }
+    interface FleGridView {
     }
     interface FleHeroBanner {
         "buttonUrls"?: string[];
@@ -219,6 +230,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "fle-button": FleButton;
         "fle-category": FleCategory;
+        "fle-grid-view": FleGridView;
         "fle-hero-banner": FleHeroBanner;
         "fle-image-info-tile": FleImageInfoTile;
         "fle-info": FleInfo;
@@ -233,6 +245,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "fle-button": LocalJSX.FleButton & JSXBase.HTMLAttributes<HTMLFleButtonElement>;
             "fle-category": LocalJSX.FleCategory & JSXBase.HTMLAttributes<HTMLFleCategoryElement>;
+            "fle-grid-view": LocalJSX.FleGridView & JSXBase.HTMLAttributes<HTMLFleGridViewElement>;
             "fle-hero-banner": LocalJSX.FleHeroBanner & JSXBase.HTMLAttributes<HTMLFleHeroBannerElement>;
             "fle-image-info-tile": LocalJSX.FleImageInfoTile & JSXBase.HTMLAttributes<HTMLFleImageInfoTileElement>;
             "fle-info": LocalJSX.FleInfo & JSXBase.HTMLAttributes<HTMLFleInfoElement>;

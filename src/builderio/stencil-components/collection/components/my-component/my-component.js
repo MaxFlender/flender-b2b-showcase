@@ -10,7 +10,7 @@ export class MyComponent {
         return format(this.first, this.middle, this.last);
     }
     render() {
-        return h("div", { key: '4a601cacf2a74124b8e499b8d4c15fb1610a74ee' }, "Hello, World! I'm ", this.getText());
+        return h("div", { key: 'bde7690fddb2dd37158d98ef38778fa62d42133f' }, "Hello, World! I'm ", this.getText());
     }
     static get is() { return "my-component"; }
     static get encapsulation() { return "shadow"; }

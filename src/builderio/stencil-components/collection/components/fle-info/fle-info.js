@@ -7,7 +7,7 @@ export class FleInfo {
     }
     // TODO handle button
     render() {
-        return (h(Host, { key: '9f99cf25c02738c8bc2b1382f261c72bdf1c41a1', class: "fle-info" }, h("fle-category", { key: 'f5ff16e6cc8cb9d0a562bcc507390a3fe87d2603' }, this.category), h("h1", { key: '1c9562129672eb50d2d9d79088dda1832697de3d' }, this.headline), h("p", { key: 'bca8bad3e07942f1cb41ee819cd5c7aa04952513' }, this.description), h("fle-button", { key: '336d6332a3ca72b643a9f618982981910fa0d84c' }, "Learn More")));
+        return (h(Host, { key: '3b642ac0d56efbf3546b93f3e434b3c9a02f3fd1', class: "fle-info" }, h("fle-category", { key: '9c154bc59c61f5d07d0cdd0af8aca69255da9404' }, this.category), h("h1", { key: 'e99dcc298b65950f4257f2c2b70bbd047839d7b9' }, this.headline), h("p", { key: 'c727e3b824e46b701ea5b53a27db6e687d807f23' }, this.description), h("fle-button", { key: '254a2d8470765ec269b0a4e77d19d3661b973f8e' }, "Learn More")));
     }
     static get is() { return "fle-info"; }
     static get originalStyleUrls() {

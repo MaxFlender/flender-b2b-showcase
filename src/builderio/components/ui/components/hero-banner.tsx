@@ -18,7 +18,7 @@ export default function HeroBanner(props: HeroBannerProps) {
   const vidUrl = props.imagePath + '?.mp4'; // hacky cause builder io media url has no indication what it is image or video
   return (
     <FleHeroBanner
-      title={props.title}
+      headline={props.title}
       description={props.subtitle}
       category={props.category}
       mediaUrl={vidUrl} />

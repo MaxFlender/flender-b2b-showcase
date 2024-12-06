@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-9bcf3c8f.js');
+const index = require('./index-c90ee123.js');
 const utils = require('./utils-e34bc855.js');
 
 const myComponentCss = ":host{display:block}";
@@ -19,7 +19,7 @@ const MyComponent = class {
         return utils.format(this.first, this.middle, this.last);
     }
     render() {
-        return index.h("div", { key: '4a601cacf2a74124b8e499b8d4c15fb1610a74ee' }, "Hello, World! I'm ", this.getText());
+        return index.h("div", { key: 'bde7690fddb2dd37158d98ef38778fa62d42133f' }, "Hello, World! I'm ", this.getText());
     }
 };
 MyComponent.style = MyComponentStyle0;

@@ -10,7 +10,7 @@ export class FleImageInfoTile {
     }
     render() {
         const reverseClass = this.imagePosition === 'right' ? 'reverse' : '';
-        return (h(Host, { key: '8672fe42445bd6228e4d2e8b9ff8d309d3f189da', class: `fle-image-info-tile ${reverseClass}` }, h("fle-media", { key: '7576c221bcb14298aef06c112d9b371c4e6515ac', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), h("fle-info", { key: '6bde543c6acf21ee38249f84eef334536daa9fd6', class: "info", headline: this.headline, category: this.category, description: this.description })));
+        return (h(Host, { key: 'dd6649e84b12dc774a30c2b2cb21c38ac22b394a', class: `fle-image-info-tile ${reverseClass}` }, h("fle-media", { key: 'd2a6a14c912bac790ca424f4b6daf900227f312c', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), h("fle-info", { key: '38555b6a997dfc671959e253c7cecffd5db0e5cc', class: "info", headline: this.headline, category: this.category, description: this.description })));
     }
     static get is() { return "fle-image-info-tile"; }
     static get originalStyleUrls() {

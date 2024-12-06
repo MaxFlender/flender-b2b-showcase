@@ -16,7 +16,7 @@ export default function InfoSection(props: InfoSectionProps) {
   const imageUrl = props.imageUrl + '?.jpg'; // hacky cause builder io media url has no indication what it is image or video
   return (
     <FleImageInfoTile
-      title={props.title}
+      headline={props.title}
       category={props.category}
       description={props.description}
       mediaUrl={imageUrl}

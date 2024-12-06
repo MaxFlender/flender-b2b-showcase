@@ -1,27 +1,5 @@
-'use strict';
-
-function _interopNamespace(e) {
-  if (e && e.__esModule) return e;
-  var n = Object.create(null);
-  if (e) {
-    Object.keys(e).forEach(function (k) {
-      if (k !== 'default') {
-        var d = Object.getOwnPropertyDescriptor(e, k);
-        Object.defineProperty(n, k, d.get ? d : {
-          enumerable: true,
-          get: function () {
-            return e[k];
-          }
-        });
-      }
-    });
-  }
-  n['default'] = e;
-  return Object.freeze(n);
-}
-
 const NAMESPACE = 'flender-web-components';
-const BUILD = /* flender-web-components */ { allRenderFn: true, appendChildSlotFix: false, asyncLoading: true, asyncQueue: false, attachStyles: true, cloneNodeFix: false, cmpDidLoad: false, cmpDidRender: false, cmpDidUnload: false, cmpDidUpdate: false, cmpShouldUpdate: false, cmpWillLoad: false, cmpWillRender: false, cmpWillUpdate: false, connectedCallback: false, constructableCSS: true, cssAnnotations: true, devTools: false, disconnectedCallback: false, element: false, event: true, experimentalScopedSlotChanges: false, experimentalSlotFixes: false, formAssociated: false, hasRenderFn: true, hostListener: false, hostListenerTarget: false, hostListenerTargetBody: false, hostListenerTargetDocument: false, hostListenerTargetParent: false, hostListenerTargetWindow: false, hotModuleReplacement: false, hydrateClientSide: false, hydrateServerSide: false, hydratedAttribute: false, hydratedClass: true, hydratedSelectorName: "hydrated", initializeNextTick: false, invisiblePrehydration: true, isDebug: false, isDev: false, isTesting: false, lazyLoad: true, lifecycle: false, lifecycleDOMEvents: false, member: true, method: false, mode: false, observeAttribute: true, profile: false, prop: true, propBoolean: false, propMutable: false, propNumber: false, propString: true, reflect: false, scoped: false, scopedSlotTextContentFix: false, scriptDataOpts: false, shadowDelegatesFocus: false, shadowDom: true, slot: true, slotChildNodesFix: false, slotRelocation: false, state: false, style: true, svg: false, taskQueue: true, transformTagName: false, updatable: true, vdomAttribute: true, vdomClass: true, vdomFunctional: false, vdomKey: true, vdomListener: true, vdomPropOrAttr: true, vdomRef: false, vdomRender: true, vdomStyle: false, vdomText: true, vdomXlink: false, watchCallback: false };
+const BUILD = /* flender-web-components */ { allRenderFn: true, appendChildSlotFix: false, asyncLoading: true, asyncQueue: false, attachStyles: true, cloneNodeFix: false, cmpDidLoad: false, cmpDidRender: false, cmpDidUnload: false, cmpDidUpdate: false, cmpShouldUpdate: false, cmpWillLoad: false, cmpWillRender: false, cmpWillUpdate: false, connectedCallback: false, constructableCSS: true, cssAnnotations: true, devTools: false, disconnectedCallback: false, element: false, event: true, experimentalScopedSlotChanges: false, experimentalSlotFixes: false, formAssociated: false, hasRenderFn: true, hostListener: false, hostListenerTarget: false, hostListenerTargetBody: false, hostListenerTargetDocument: false, hostListenerTargetParent: false, hostListenerTargetWindow: false, hotModuleReplacement: false, hydrateClientSide: false, hydrateServerSide: false, hydratedAttribute: false, hydratedClass: true, hydratedSelectorName: "hydrated", initializeNextTick: false, invisiblePrehydration: true, isDebug: false, isDev: false, isTesting: false, lazyLoad: true, lifecycle: false, lifecycleDOMEvents: false, member: true, method: false, mode: false, observeAttribute: true, profile: false, prop: true, propBoolean: false, propMutable: false, propNumber: false, propString: true, reflect: false, scoped: false, scopedSlotTextContentFix: false, scriptDataOpts: false, shadowDelegatesFocus: false, shadowDom: true, slot: true, slotChildNodesFix: false, slotRelocation: true, state: false, style: true, svg: false, taskQueue: true, transformTagName: false, updatable: true, vdomAttribute: true, vdomClass: true, vdomFunctional: false, vdomKey: true, vdomListener: true, vdomPropOrAttr: true, vdomRef: false, vdomRender: true, vdomStyle: false, vdomText: true, vdomXlink: false, watchCallback: false };
 
 /*
  Stencil Client Platform v4.22.1 | MIT Licensed | https://stenciljs.com
@@ -64,13 +42,13 @@ var loadModule = (cmpMeta, hostRef, hmrVersionId) => {
     return module[exportName];
   }
   /*!__STENCIL_STATIC_IMPORT_SWITCH__*/
-  return Promise.resolve().then(function () { return /*#__PURE__*/_interopNamespace(require(
+  return import(
     /* @vite-ignore */
     /* webpackInclude: /\.entry\.js$/ */
     /* webpackExclude: /\.system\.entry\.js$/ */
     /* webpackMode: "lazy" */
     `./${bundleId}.entry.js${""}`
-  )); }).then((importedModule) => {
+  ).then((importedModule) => {
     {
       cmpModules.set(bundleId, importedModule);
     }
@@ -219,6 +197,7 @@ var uniqueTime = (key, measureText) => {
 var h = (nodeName, vnodeData, ...children) => {
   let child = null;
   let key = null;
+  let slotName = null;
   let simple = false;
   let lastSimple = false;
   const vNodeChildren = [];
@@ -245,6 +224,9 @@ var h = (nodeName, vnodeData, ...children) => {
     if (vnodeData.key) {
       key = vnodeData.key;
     }
+    if (vnodeData.name) {
+      slotName = vnodeData.name;
+    }
     {
       const classData = vnodeData.className || vnodeData.class;
       if (classData) {
@@ -259,6 +241,9 @@ var h = (nodeName, vnodeData, ...children) => {
   }
   {
     vnode.$key$ = key;
+  }
+  {
+    vnode.$name$ = slotName;
   }
   return vnode;
 };
@@ -275,6 +260,9 @@ var newVNode = (tag, text) => {
   }
   {
     vnode.$key$ = null;
+  }
+  {
+    vnode.$name$ = null;
   }
   return vnode;
 };
@@ -491,16 +479,41 @@ function sortedAttrNames(attrNames) {
 
 // src/runtime/vdom/vdom-render.ts
 var scopeId;
+var contentRef;
 var hostTagName;
 var useNativeShadowDom = false;
+var checkSlotFallbackVisibility = false;
+var checkSlotRelocate = false;
 var isSvgMode = false;
 var createElm = (oldParentVNode, newParentVNode, childIndex, parentElm) => {
+  var _a;
   const newVNode2 = newParentVNode.$children$[childIndex];
   let i2 = 0;
   let elm;
   let childNode;
+  let oldVNode;
+  if (!useNativeShadowDom) {
+    checkSlotRelocate = true;
+    if (newVNode2.$tag$ === "slot") {
+      if (scopeId) {
+        parentElm.classList.add(scopeId + "-s");
+      }
+      newVNode2.$flags$ |= newVNode2.$children$ ? (
+        // slot element has fallback content
+        // still create an element that "mocks" the slot element
+        2 /* isSlotFallback */
+      ) : (
+        // slot element does not have fallback content
+        // create an html comment we'll use to always reference
+        // where actual slot content should sit next to
+        1 /* isSlotReference */
+      );
+    }
+  }
   if (newVNode2.$text$ !== null) {
     elm = newVNode2.$elm$ = doc.createTextNode(newVNode2.$text$);
+  } else if (newVNode2.$flags$ & 1 /* isSlotReference */) {
+    elm = newVNode2.$elm$ = doc.createTextNode("");
   } else {
     elm = newVNode2.$elm$ = doc.createElement(
       !useNativeShadowDom && BUILD.slotRelocation && newVNode2.$flags$ & 2 /* isSlotFallback */ ? "slot-fb" : newVNode2.$tag$
@@ -515,7 +528,7 @@ var createElm = (oldParentVNode, newParentVNode, childIndex, parentElm) => {
     }
     if (newVNode2.$children$) {
       for (i2 = 0; i2 < newVNode2.$children$.length; ++i2) {
-        childNode = createElm(oldParentVNode, newVNode2, i2);
+        childNode = createElm(oldParentVNode, newVNode2, i2, elm);
         if (childNode) {
           elm.appendChild(childNode);
         }
@@ -523,20 +536,60 @@ var createElm = (oldParentVNode, newParentVNode, childIndex, parentElm) => {
     }
   }
   elm["s-hn"] = hostTagName;
+  {
+    if (newVNode2.$flags$ & (2 /* isSlotFallback */ | 1 /* isSlotReference */)) {
+      elm["s-sr"] = true;
+      elm["s-cr"] = contentRef;
+      elm["s-sn"] = newVNode2.$name$ || "";
+      elm["s-rf"] = (_a = newVNode2.$attrs$) == null ? void 0 : _a.ref;
+      oldVNode = oldParentVNode && oldParentVNode.$children$ && oldParentVNode.$children$[childIndex];
+      if (oldVNode && oldVNode.$tag$ === newVNode2.$tag$ && oldParentVNode.$elm$) {
+        {
+          putBackInOriginalLocation(oldParentVNode.$elm$, false);
+        }
+      }
+    }
+  }
   return elm;
 };
+var putBackInOriginalLocation = (parentElm, recursive) => {
+  plt.$flags$ |= 1 /* isTmpDisconnected */;
+  const oldSlotChildNodes = Array.from(parentElm.childNodes);
+  if (parentElm["s-sr"] && BUILD.experimentalSlotFixes) {
+    let node = parentElm;
+    while (node = node.nextSibling) {
+      if (node && node["s-sn"] === parentElm["s-sn"] && node["s-sh"] === hostTagName) {
+        oldSlotChildNodes.push(node);
+      }
+    }
+  }
+  for (let i2 = oldSlotChildNodes.length - 1; i2 >= 0; i2--) {
+    const childNode = oldSlotChildNodes[i2];
+    if (childNode["s-hn"] !== hostTagName && childNode["s-ol"]) {
+      insertBefore(parentReferenceNode(childNode), childNode, referenceNode(childNode));
+      childNode["s-ol"].remove();
+      childNode["s-ol"] = void 0;
+      childNode["s-sh"] = void 0;
+      checkSlotRelocate = true;
+    }
+    if (recursive) {
+      putBackInOriginalLocation(childNode, recursive);
+    }
+  }
+  plt.$flags$ &= ~1 /* isTmpDisconnected */;
+};
 var addVnodes = (parentElm, before, parentVNode, vnodes, startIdx, endIdx) => {
-  let containerElm = parentElm;
+  let containerElm = parentElm["s-cr"] && parentElm["s-cr"].parentNode || parentElm;
   let childNode;
   if (containerElm.shadowRoot && containerElm.tagName === hostTagName) {
     containerElm = containerElm.shadowRoot;
   }
   for (; startIdx <= endIdx; ++startIdx) {
     if (vnodes[startIdx]) {
-      childNode = createElm(null, parentVNode, startIdx);
+      childNode = createElm(null, parentVNode, startIdx, parentElm);
       if (childNode) {
         vnodes[startIdx].$elm$ = childNode;
-        insertBefore(containerElm, childNode, before);
+        insertBefore(containerElm, childNode, referenceNode(before) );
       }
     }
   }
@@ -547,6 +600,14 @@ var removeVnodes = (vnodes, startIdx, endIdx) => {
     if (vnode) {
       const elm = vnode.$elm$;
       if (elm) {
+        {
+          checkSlotFallbackVisibility = true;
+          if (elm["s-ol"]) {
+            elm["s-ol"].remove();
+          } else {
+            putBackInOriginalLocation(elm, true);
+          }
+        }
         elm.remove();
       }
     }
@@ -583,11 +644,17 @@ var updateChildren = (parentElm, oldCh, newVNode2, newCh, isInitialRender = fals
       oldEndVnode = oldCh[--oldEndIdx];
       newEndVnode = newCh[--newEndIdx];
     } else if (isSameVnode(oldStartVnode, newEndVnode, isInitialRender)) {
+      if ((oldStartVnode.$tag$ === "slot" || newEndVnode.$tag$ === "slot")) {
+        putBackInOriginalLocation(oldStartVnode.$elm$.parentNode, false);
+      }
       patch(oldStartVnode, newEndVnode, isInitialRender);
       insertBefore(parentElm, oldStartVnode.$elm$, oldEndVnode.$elm$.nextSibling);
       oldStartVnode = oldCh[++oldStartIdx];
       newEndVnode = newCh[--newEndIdx];
     } else if (isSameVnode(oldEndVnode, newStartVnode, isInitialRender)) {
+      if ((oldStartVnode.$tag$ === "slot" || newEndVnode.$tag$ === "slot")) {
+        putBackInOriginalLocation(oldEndVnode.$elm$.parentNode, false);
+      }
       patch(oldEndVnode, newStartVnode, isInitialRender);
       insertBefore(parentElm, oldEndVnode.$elm$, oldStartVnode.$elm$);
       oldEndVnode = oldCh[--oldEndIdx];
@@ -605,7 +672,7 @@ var updateChildren = (parentElm, oldCh, newVNode2, newCh, isInitialRender = fals
       if (idxInOld >= 0) {
         elmToMove = oldCh[idxInOld];
         if (elmToMove.$tag$ !== newStartVnode.$tag$) {
-          node = createElm(oldCh && oldCh[newStartIdx], newVNode2, idxInOld);
+          node = createElm(oldCh && oldCh[newStartIdx], newVNode2, idxInOld, parentElm);
         } else {
           patch(elmToMove, newStartVnode, isInitialRender);
           oldCh[idxInOld] = void 0;
@@ -613,12 +680,12 @@ var updateChildren = (parentElm, oldCh, newVNode2, newCh, isInitialRender = fals
         }
         newStartVnode = newCh[++newStartIdx];
       } else {
-        node = createElm(oldCh && oldCh[newStartIdx], newVNode2, newStartIdx);
+        node = createElm(oldCh && oldCh[newStartIdx], newVNode2, newStartIdx, parentElm);
         newStartVnode = newCh[++newStartIdx];
       }
       if (node) {
         {
-          insertBefore(oldStartVnode.$elm$.parentNode, node, oldStartVnode.$elm$);
+          insertBefore(parentReferenceNode(oldStartVnode.$elm$), node, referenceNode(oldStartVnode.$elm$));
         }
       }
     }
@@ -638,6 +705,18 @@ var updateChildren = (parentElm, oldCh, newVNode2, newCh, isInitialRender = fals
 };
 var isSameVnode = (leftVNode, rightVNode, isInitialRender = false) => {
   if (leftVNode.$tag$ === rightVNode.$tag$) {
+    if (leftVNode.$tag$ === "slot") {
+      if (
+        // The component gets hydrated and no VDOM has been initialized.
+        // Here the comparison can't happen as $name$ property is not set for `leftNode`.
+        "$nodeId$" in leftVNode && isInitialRender && // `leftNode` is not from type HTMLComment which would cause many
+        // hydration comments to be removed
+        leftVNode.$elm$.nodeType !== 8
+      ) {
+        return false;
+      }
+      return leftVNode.$name$ === rightVNode.$name$;
+    }
     if (!isInitialRender) {
       return leftVNode.$key$ === rightVNode.$key$;
     }
@@ -645,12 +724,17 @@ var isSameVnode = (leftVNode, rightVNode, isInitialRender = false) => {
   }
   return false;
 };
+var referenceNode = (node) => {
+  return node && node["s-ol"] || node;
+};
+var parentReferenceNode = (node) => (node["s-ol"] ? node["s-ol"] : node).parentNode;
 var patch = (oldVNode, newVNode2, isInitialRender = false) => {
   const elm = newVNode2.$elm$ = oldVNode.$elm$;
   const oldChildren = oldVNode.$children$;
   const newChildren = newVNode2.$children$;
   const tag = newVNode2.$tag$;
   const text = newVNode2.$text$;
+  let defaultHolder;
   if (text === null) {
     {
       if (tag === "slot" && !useNativeShadowDom) ; else {
@@ -670,15 +754,109 @@ var patch = (oldVNode, newVNode2, isInitialRender = false) => {
     ) {
       removeVnodes(oldChildren, 0, oldChildren.length - 1);
     }
+  } else if ((defaultHolder = elm["s-cr"])) {
+    defaultHolder.parentNode.textContent = text;
   } else if (oldVNode.$text$ !== text) {
     elm.data = text;
   }
+};
+var updateFallbackSlotVisibility = (elm) => {
+  const childNodes = elm.childNodes;
+  for (const childNode of childNodes) {
+    if (childNode.nodeType === 1 /* ElementNode */) {
+      if (childNode["s-sr"]) {
+        const slotName = childNode["s-sn"];
+        childNode.hidden = false;
+        for (const siblingNode of childNodes) {
+          if (siblingNode !== childNode) {
+            if (siblingNode["s-hn"] !== childNode["s-hn"] || slotName !== "") {
+              if (siblingNode.nodeType === 1 /* ElementNode */ && (slotName === siblingNode.getAttribute("slot") || slotName === siblingNode["s-sn"]) || siblingNode.nodeType === 3 /* TextNode */ && slotName === siblingNode["s-sn"]) {
+                childNode.hidden = true;
+                break;
+              }
+            } else {
+              if (siblingNode.nodeType === 1 /* ElementNode */ || siblingNode.nodeType === 3 /* TextNode */ && siblingNode.textContent.trim() !== "") {
+                childNode.hidden = true;
+                break;
+              }
+            }
+          }
+        }
+      }
+      updateFallbackSlotVisibility(childNode);
+    }
+  }
+};
+var relocateNodes = [];
+var markSlotContentForRelocation = (elm) => {
+  let node;
+  let hostContentNodes;
+  let j;
+  for (const childNode of elm.childNodes) {
+    if (childNode["s-sr"] && (node = childNode["s-cr"]) && node.parentNode) {
+      hostContentNodes = node.parentNode.childNodes;
+      const slotName = childNode["s-sn"];
+      for (j = hostContentNodes.length - 1; j >= 0; j--) {
+        node = hostContentNodes[j];
+        if (!node["s-cn"] && !node["s-nr"] && node["s-hn"] !== childNode["s-hn"] && (!BUILD.experimentalSlotFixes  )) {
+          if (isNodeLocatedInSlot(node, slotName)) {
+            let relocateNodeData = relocateNodes.find((r) => r.$nodeToRelocate$ === node);
+            checkSlotFallbackVisibility = true;
+            node["s-sn"] = node["s-sn"] || slotName;
+            if (relocateNodeData) {
+              relocateNodeData.$nodeToRelocate$["s-sh"] = childNode["s-hn"];
+              relocateNodeData.$slotRefNode$ = childNode;
+            } else {
+              node["s-sh"] = childNode["s-hn"];
+              relocateNodes.push({
+                $slotRefNode$: childNode,
+                $nodeToRelocate$: node
+              });
+            }
+            if (node["s-sr"]) {
+              relocateNodes.map((relocateNode) => {
+                if (isNodeLocatedInSlot(relocateNode.$nodeToRelocate$, node["s-sn"])) {
+                  relocateNodeData = relocateNodes.find((r) => r.$nodeToRelocate$ === node);
+                  if (relocateNodeData && !relocateNode.$slotRefNode$) {
+                    relocateNode.$slotRefNode$ = relocateNodeData.$slotRefNode$;
+                  }
+                }
+              });
+            }
+          } else if (!relocateNodes.some((r) => r.$nodeToRelocate$ === node)) {
+            relocateNodes.push({
+              $nodeToRelocate$: node
+            });
+          }
+        }
+      }
+    }
+    if (childNode.nodeType === 1 /* ElementNode */) {
+      markSlotContentForRelocation(childNode);
+    }
+  }
+};
+var isNodeLocatedInSlot = (nodeToRelocate, slotName) => {
+  if (nodeToRelocate.nodeType === 1 /* ElementNode */) {
+    if (nodeToRelocate.getAttribute("slot") === null && slotName === "") {
+      return true;
+    }
+    if (nodeToRelocate.getAttribute("slot") === slotName) {
+      return true;
+    }
+    return false;
+  }
+  if (nodeToRelocate["s-sn"] === slotName) {
+    return true;
+  }
+  return slotName === "";
 };
 var insertBefore = (parent, newNode, reference) => {
   const inserted = parent == null ? void 0 : parent.insertBefore(newNode, reference);
   return inserted;
 };
 var renderVdom = (hostRef, renderFnResults, isInitialLoad = false) => {
+  var _a, _b, _c, _d;
   const hostElm = hostRef.$hostElement$;
   const cmpMeta = hostRef.$cmpMeta$;
   const oldVNode = hostRef.$vnode$ || newVNode(null, null);
@@ -699,7 +877,75 @@ var renderVdom = (hostRef, renderFnResults, isInitialLoad = false) => {
     scopeId = hostElm["s-sc"];
   }
   useNativeShadowDom = (cmpMeta.$flags$ & 1 /* shadowDomEncapsulation */) !== 0;
+  {
+    contentRef = hostElm["s-cr"];
+    checkSlotFallbackVisibility = false;
+  }
   patch(oldVNode, rootVnode, isInitialLoad);
+  {
+    plt.$flags$ |= 1 /* isTmpDisconnected */;
+    if (checkSlotRelocate) {
+      markSlotContentForRelocation(rootVnode.$elm$);
+      for (const relocateData of relocateNodes) {
+        const nodeToRelocate = relocateData.$nodeToRelocate$;
+        if (!nodeToRelocate["s-ol"]) {
+          const orgLocationNode = doc.createTextNode("");
+          orgLocationNode["s-nr"] = nodeToRelocate;
+          insertBefore(nodeToRelocate.parentNode, nodeToRelocate["s-ol"] = orgLocationNode, nodeToRelocate);
+        }
+      }
+      for (const relocateData of relocateNodes) {
+        const nodeToRelocate = relocateData.$nodeToRelocate$;
+        const slotRefNode = relocateData.$slotRefNode$;
+        if (slotRefNode) {
+          const parentNodeRef = slotRefNode.parentNode;
+          let insertBeforeNode = slotRefNode.nextSibling;
+          {
+            let orgLocationNode = (_a = nodeToRelocate["s-ol"]) == null ? void 0 : _a.previousSibling;
+            while (orgLocationNode) {
+              let refNode = (_b = orgLocationNode["s-nr"]) != null ? _b : null;
+              if (refNode && refNode["s-sn"] === nodeToRelocate["s-sn"] && parentNodeRef === refNode.parentNode) {
+                refNode = refNode.nextSibling;
+                while (refNode === nodeToRelocate || (refNode == null ? void 0 : refNode["s-sr"])) {
+                  refNode = refNode == null ? void 0 : refNode.nextSibling;
+                }
+                if (!refNode || !refNode["s-nr"]) {
+                  insertBeforeNode = refNode;
+                  break;
+                }
+              }
+              orgLocationNode = orgLocationNode.previousSibling;
+            }
+          }
+          if (!insertBeforeNode && parentNodeRef !== nodeToRelocate.parentNode || nodeToRelocate.nextSibling !== insertBeforeNode) {
+            if (nodeToRelocate !== insertBeforeNode) {
+              if (!nodeToRelocate["s-hn"] && nodeToRelocate["s-ol"]) {
+                nodeToRelocate["s-hn"] = nodeToRelocate["s-ol"].parentNode.nodeName;
+              }
+              insertBefore(parentNodeRef, nodeToRelocate, insertBeforeNode);
+              if (nodeToRelocate.nodeType === 1 /* ElementNode */) {
+                nodeToRelocate.hidden = (_c = nodeToRelocate["s-ih"]) != null ? _c : false;
+              }
+            }
+          }
+          nodeToRelocate && typeof slotRefNode["s-rf"] === "function" && slotRefNode["s-rf"](nodeToRelocate);
+        } else {
+          if (nodeToRelocate.nodeType === 1 /* ElementNode */) {
+            if (isInitialLoad) {
+              nodeToRelocate["s-ih"] = (_d = nodeToRelocate.hidden) != null ? _d : false;
+            }
+            nodeToRelocate.hidden = true;
+          }
+        }
+      }
+    }
+    if (checkSlotFallbackVisibility) {
+      updateFallbackSlotVisibility(rootVnode.$elm$);
+    }
+    plt.$flags$ &= ~1 /* isTmpDisconnected */;
+    relocateNodes.length = 0;
+  }
+  contentRef = void 0;
 };
 
 // src/runtime/update-component.ts
@@ -993,6 +1239,12 @@ var connectedCallback = (elm) => {
     if (!(hostRef.$flags$ & 1 /* hasConnected */)) {
       hostRef.$flags$ |= 1 /* hasConnected */;
       {
+        if (// TODO(STENCIL-854): Remove code related to legacy shadowDomShim field
+        cmpMeta.$flags$ & (4 /* hasSlotRelocation */ | 8 /* needsShadowDomShim */)) {
+          setContentReference(elm);
+        }
+      }
+      {
         let ancestorComponent = elm;
         while (ancestorComponent = ancestorComponent.parentNode || ancestorComponent.host) {
           if (ancestorComponent["s-p"]) {
@@ -1020,6 +1272,13 @@ var connectedCallback = (elm) => {
     }
     endConnected();
   }
+};
+var setContentReference = (elm) => {
+  const contentRefElm = elm["s-cr"] = doc.createComment(
+    ""
+  );
+  contentRefElm["s-cn"] = true;
+  insertBefore(elm, contentRefElm, elm.firstChild);
 };
 var disconnectInstance = (instance) => {
 };
@@ -1148,12 +1407,6 @@ var bootstrapLazy = (lazyBundles, options = {}) => {
 // src/runtime/nonce.ts
 var setNonce = (nonce) => plt.$nonce$ = nonce;
 
-exports.Host = Host;
-exports.bootstrapLazy = bootstrapLazy;
-exports.createEvent = createEvent;
-exports.h = h;
-exports.promiseResolve = promiseResolve;
-exports.registerInstance = registerInstance;
-exports.setNonce = setNonce;
+export { Host as H, bootstrapLazy as b, createEvent as c, h, promiseResolve as p, registerInstance as r, setNonce as s };
 
-//# sourceMappingURL=index-9bcf3c8f.js.map
+//# sourceMappingURL=index-db326f33.js.map

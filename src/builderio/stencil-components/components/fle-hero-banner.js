@@ -1,8 +1,8 @@
-import { p as proxyCustomElement, H, h, d as Host } from './p-59bfa9e0.js';
-import { d as defineCustomElement$5 } from './p-b9e794f5.js';
-import { d as defineCustomElement$4 } from './p-3f7a6235.js';
-import { d as defineCustomElement$3 } from './p-214876f0.js';
-import { d as defineCustomElement$2 } from './p-b68cbabb.js';
+import { p as proxyCustomElement, H, h, d as Host } from './p-d99ec579.js';
+import { d as defineCustomElement$5 } from './p-a5eca8f3.js';
+import { d as defineCustomElement$4 } from './p-76a96db3.js';
+import { d as defineCustomElement$3 } from './p-dd3fbdc0.js';
+import { d as defineCustomElement$2 } from './p-71fef340.js';
 
 const fleHeroBannerCss = "*{font-family:inherit}.fle-hero-banner{display:block;position:relative;width:100%;min-height:30rem}.fle-hero-banner .media{position:absolute;width:100%;height:100%}.fle-hero-banner .info{position:absolute;top:50%;transform:translateY(-50%)}@media (min-width: 992px){.fle-hero-banner .info{width:30%;max-width:550px}.fle-hero-banner .info.left{right:unset;left:10%}.fle-hero-banner .info.right{right:10%;left:unset}}";
 const FleHeroBannerStyle0 = fleHeroBannerCss;
@@ -21,7 +21,7 @@ const FleHeroBanner$1 = /*@__PURE__*/ proxyCustomElement(class FleHeroBanner ext
     }
     render() {
         const infoAlignmentClass = this.infoPosition === 'left' ? 'left' : 'right';
-        return (h(Host, { key: '42e04f894822fcaab772965d52071c47ac1d601f', class: "fle-hero-banner" }, h("fle-media", { key: '55c269ab49c6c5b3446641b60dcdb11448724119', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), h("fle-info", { key: 'd22373fc18f3a786d13c9940613f826bf150d6d5', class: `info ${infoAlignmentClass}`, headline: this.headline, category: this.category, description: this.description })));
+        return (h(Host, { key: 'f0ebd615ea6fead84f1c58c0c4f39a0455d84595', class: "fle-hero-banner" }, h("fle-media", { key: '308e042196b4789c5b8eb81137ad011d6abcfc09', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), h("fle-info", { key: '9cfcff81d568a8d8e65d366f90a62ab50bff4fc0', class: `info ${infoAlignmentClass}`, headline: this.headline, category: this.category, description: this.description })));
     }
     static get style() { return FleHeroBannerStyle0; }
 }, [0, "fle-hero-banner", {

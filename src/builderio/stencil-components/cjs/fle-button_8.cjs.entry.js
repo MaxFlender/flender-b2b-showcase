@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-9bcf3c8f.js');
+const index = require('./index-c90ee123.js');
 const utils = require('./utils-e34bc855.js');
 
 const fleButtonCss = "*{font-family:inherit}:host{display:block}button{padding:0 16px;cursor:pointer}.small-size{height:24px;border-radius:12px;font-size:16px}.medium-size{height:48px;border-radius:24px;font-size:16px}.primary-style{background-color:#227dc6;color:#fff;border-color:#227dc6}.secondary-style{color:#fff;border-color:#227dc6}.solid-appearance{border:none}.solid-appearance:hover{background-color:#6095d3}.outline-appearance{background-color:transparent;color:#227dc6;border:2px solid #227dc6}.outline-appearance:hover{background-color:#227dc6;color:#fff}";
@@ -45,6 +45,19 @@ const FleCategory = class {
 };
 FleCategory.style = FleCategoryStyle0;
 
+const fleGridViewCss = "*{font-family:inherit}:host{display:block}.fle-grid-view{display:grid;gap:8px;grid-template-columns:repeat(3, minmax(0, 1fr))}";
+const FleGridViewStyle0 = fleGridViewCss;
+
+const FleGridView = class {
+    constructor(hostRef) {
+        index.registerInstance(this, hostRef);
+    }
+    render() {
+        return (index.h(index.Host, { key: '6895dbef294f5b8206f10d82ca1b3f29a02edbac', class: "fle-grid-view" }, index.h("slot", { key: 'fe3dbfe9cf2a2dd0082865a0eed6bc4073b5985c' })));
+    }
+};
+FleGridView.style = FleGridViewStyle0;
+
 const fleHeroBannerCss = "*{font-family:inherit}.fle-hero-banner{display:block;position:relative;width:100%;min-height:30rem}.fle-hero-banner .media{position:absolute;width:100%;height:100%}.fle-hero-banner .info{position:absolute;top:50%;transform:translateY(-50%)}@media (min-width: 992px){.fle-hero-banner .info{width:30%;max-width:550px}.fle-hero-banner .info.left{right:unset;left:10%}.fle-hero-banner .info.right{right:10%;left:unset}}";
 const FleHeroBannerStyle0 = fleHeroBannerCss;
 
@@ -61,12 +74,12 @@ const FleHeroBanner = class {
     }
     render() {
         const infoAlignmentClass = this.infoPosition === 'left' ? 'left' : 'right';
-        return (index.h(index.Host, { key: '42e04f894822fcaab772965d52071c47ac1d601f', class: "fle-hero-banner" }, index.h("fle-media", { key: '55c269ab49c6c5b3446641b60dcdb11448724119', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), index.h("fle-info", { key: 'd22373fc18f3a786d13c9940613f826bf150d6d5', class: `info ${infoAlignmentClass}`, headline: this.headline, category: this.category, description: this.description })));
+        return (index.h(index.Host, { key: 'f0ebd615ea6fead84f1c58c0c4f39a0455d84595', class: "fle-hero-banner" }, index.h("fle-media", { key: '308e042196b4789c5b8eb81137ad011d6abcfc09', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), index.h("fle-info", { key: '9cfcff81d568a8d8e65d366f90a62ab50bff4fc0', class: `info ${infoAlignmentClass}`, headline: this.headline, category: this.category, description: this.description })));
     }
 };
 FleHeroBanner.style = FleHeroBannerStyle0;
 
-const fleImageInfoTileCss = "*{font-family:inherit}.fle-image-info-tile{display:flex;flex-flow:column nowrap;justify-content:space-around;align-items:center}@media (min-width: 992px){.fle-image-info-tile{max-width:100%;flex-flow:row nowrap;padding-left:32px;padding-right:32px;gap:32px}.fle-image-info-tile.reverse{flex-direction:row-reverse}}@media (min-width: 992px){.fle-image-info-tile .media{flex:1 1 0}}.fle-image-info-tile .info{background-color:unset;color:black}@media (min-width: 992px){.fle-image-info-tile .info{flex:1 1 0}}";
+const fleImageInfoTileCss = "*{font-family:inherit}.fle-image-info-tile{display:flex;flex-flow:column nowrap;justify-content:space-around;align-items:center}@media (min-width: 992px){.fle-image-info-tile{max-width:100%;flex-flow:row nowrap;padding-left:15%;padding-right:15%;gap:32px}.fle-image-info-tile.reverse{flex-direction:row-reverse}}@media (min-width: 992px){.fle-image-info-tile .media{flex:1 1 0}}.fle-image-info-tile .info{background-color:unset;color:black}@media (min-width: 992px){.fle-image-info-tile .info{flex:1 1 0}}";
 const FleImageInfoTileStyle0 = fleImageInfoTileCss;
 
 const FleImageInfoTile = class {
@@ -81,7 +94,7 @@ const FleImageInfoTile = class {
     }
     render() {
         const reverseClass = this.imagePosition === 'right' ? 'reverse' : '';
-        return (index.h(index.Host, { key: '8672fe42445bd6228e4d2e8b9ff8d309d3f189da', class: `fle-image-info-tile ${reverseClass}` }, index.h("fle-media", { key: '7576c221bcb14298aef06c112d9b371c4e6515ac', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), index.h("fle-info", { key: '6bde543c6acf21ee38249f84eef334536daa9fd6', class: "info", headline: this.headline, category: this.category, description: this.description })));
+        return (index.h(index.Host, { key: 'dd6649e84b12dc774a30c2b2cb21c38ac22b394a', class: `fle-image-info-tile ${reverseClass}` }, index.h("fle-media", { key: 'd2a6a14c912bac790ca424f4b6daf900227f312c', class: "media", "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), index.h("fle-info", { key: '38555b6a997dfc671959e253c7cecffd5db0e5cc', class: "info", headline: this.headline, category: this.category, description: this.description })));
     }
 };
 FleImageInfoTile.style = FleImageInfoTileStyle0;
@@ -98,7 +111,7 @@ const FleInfo = class {
     }
     // TODO handle button
     render() {
-        return (index.h(index.Host, { key: '9f99cf25c02738c8bc2b1382f261c72bdf1c41a1', class: "fle-info" }, index.h("fle-category", { key: 'f5ff16e6cc8cb9d0a562bcc507390a3fe87d2603' }, this.category), index.h("h1", { key: '1c9562129672eb50d2d9d79088dda1832697de3d' }, this.headline), index.h("p", { key: 'bca8bad3e07942f1cb41ee819cd5c7aa04952513' }, this.description), index.h("fle-button", { key: '336d6332a3ca72b643a9f618982981910fa0d84c' }, "Learn More")));
+        return (index.h(index.Host, { key: '3b642ac0d56efbf3546b93f3e434b3c9a02f3fd1', class: "fle-info" }, index.h("fle-category", { key: '9c154bc59c61f5d07d0cdd0af8aca69255da9404' }, this.category), index.h("h1", { key: 'e99dcc298b65950f4257f2c2b70bbd047839d7b9' }, this.headline), index.h("p", { key: 'c727e3b824e46b701ea5b53a27db6e687d807f23' }, this.description), index.h("fle-button", { key: '254a2d8470765ec269b0a4e77d19d3661b973f8e' }, "Learn More")));
     }
 };
 FleInfo.style = FleInfoStyle0;
@@ -146,7 +159,7 @@ const FleProductListItem = class {
         this.mediaAltText = undefined;
     }
     render() {
-        return (index.h(index.Host, { key: '9cb36d580d2cc4cf18bffb9e89146e2781f1d5c2', class: "fle-product-list-item" }, index.h("fle-category", { key: '366e4101072de4378f3f14506d372b3dcf6ec061' }, this.category), index.h("h3", { key: '92aa1a2b7be9abe59ec0ed478a2163f4ab56cca1' }, this.headline), index.h("fle-media", { key: '01f114632a5a3744db6ade5fb1881e21b8892622', "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), index.h("p", { key: 'af82e3471d67634483da68cf3325ec795560ae09' }, this.description), index.h("fle-button", { key: 'f284ffd381fec189e5250ca6847226aeb1804438', onButtonClicked: () => this.onClicked() }, this.ctaText)));
+        return (index.h(index.Host, { key: '03039d81d688906a62bb21388765a741485eaa04', class: "fle-product-list-item" }, index.h("fle-category", { key: '283817236895b2dd0a301198ebfc4478015979f4' }, this.category), index.h("h3", { key: 'fa51a311b190bba914366ae905cecfc9e26c0862' }, this.headline), index.h("fle-media", { key: '1ca7c0dcb366048cecf5943e22a6223a5fac0f1f', "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), index.h("p", { key: 'a293d42d1703966854f79ffc30d376aaaa2bf4d1' }, this.description), index.h("fle-button", { key: 'bce08bcb190db0e59c43728a87dcd56386bd8d1c', onButtonClicked: () => this.onClicked() }, this.ctaText)));
     }
     onClicked() {
         this.productClicked.emit();
@@ -156,10 +169,11 @@ FleProductListItem.style = FleProductListItemStyle0;
 
 exports.fle_button = FleButton;
 exports.fle_category = FleCategory;
+exports.fle_grid_view = FleGridView;
 exports.fle_hero_banner = FleHeroBanner;
 exports.fle_image_info_tile = FleImageInfoTile;
 exports.fle_info = FleInfo;
 exports.fle_media = FleMedia;
 exports.fle_product_list_item = FleProductListItem;
 
-//# sourceMappingURL=fle-button_7.cjs.entry.js.map
+//# sourceMappingURL=fle-button_8.cjs.entry.js.map

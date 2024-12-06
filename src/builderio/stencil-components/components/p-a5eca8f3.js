@@ -1,4 +1,4 @@
-import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-59bfa9e0.js';
+import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-d99ec579.js';
 
 const fleButtonCss = "*{font-family:inherit}:host{display:block}button{padding:0 16px;cursor:pointer}.small-size{height:24px;border-radius:12px;font-size:16px}.medium-size{height:48px;border-radius:24px;font-size:16px}.primary-style{background-color:#227dc6;color:#fff;border-color:#227dc6}.secondary-style{color:#fff;border-color:#227dc6}.solid-appearance{border:none}.solid-appearance:hover{background-color:#6095d3}.outline-appearance{background-color:transparent;color:#227dc6;border:2px solid #227dc6}.outline-appearance:hover{background-color:#227dc6;color:#fff}";
 const FleButtonStyle0 = fleButtonCss;
@@ -49,4 +49,4 @@ defineCustomElement();
 
 export { FleButton as F, defineCustomElement as d };
 
-//# sourceMappingURL=p-b9e794f5.js.map
+//# sourceMappingURL=p-a5eca8f3.js.map

@@ -1,6 +1,6 @@
-import { p as proxyCustomElement, H, h, d as Host } from './p-59bfa9e0.js';
-import { d as defineCustomElement$2 } from './p-b9e794f5.js';
-import { d as defineCustomElement$1 } from './p-3f7a6235.js';
+import { p as proxyCustomElement, H, h, d as Host } from './p-d99ec579.js';
+import { d as defineCustomElement$2 } from './p-a5eca8f3.js';
+import { d as defineCustomElement$1 } from './p-76a96db3.js';
 
 const fleInfoCss = "*{font-family:inherit}.fle-info{display:flex;flex-flow:column nowrap;justify-content:center;align-items:flex-start;overflow:hidden;padding:3rem;background-color:rgba(0, 62, 98, 0.4392156863);color:white;font-weight:100}.fle-info h1{color:#227dc6}";
 const FleInfoStyle0 = fleInfoCss;
@@ -15,7 +15,7 @@ const FleInfo = /*@__PURE__*/ proxyCustomElement(class FleInfo extends H {
     }
     // TODO handle button
     render() {
-        return (h(Host, { key: '9f99cf25c02738c8bc2b1382f261c72bdf1c41a1', class: "fle-info" }, h("fle-category", { key: 'f5ff16e6cc8cb9d0a562bcc507390a3fe87d2603' }, this.category), h("h1", { key: '1c9562129672eb50d2d9d79088dda1832697de3d' }, this.headline), h("p", { key: 'bca8bad3e07942f1cb41ee819cd5c7aa04952513' }, this.description), h("fle-button", { key: '336d6332a3ca72b643a9f618982981910fa0d84c' }, "Learn More")));
+        return (h(Host, { key: '3b642ac0d56efbf3546b93f3e434b3c9a02f3fd1', class: "fle-info" }, h("fle-category", { key: '9c154bc59c61f5d07d0cdd0af8aca69255da9404' }, this.category), h("h1", { key: 'e99dcc298b65950f4257f2c2b70bbd047839d7b9' }, this.headline), h("p", { key: 'c727e3b824e46b701ea5b53a27db6e687d807f23' }, this.description), h("fle-button", { key: '254a2d8470765ec269b0a4e77d19d3661b973f8e' }, "Learn More")));
     }
     static get style() { return FleInfoStyle0; }
 }, [0, "fle-info", {
@@ -50,4 +50,4 @@ defineCustomElement();
 
 export { FleInfo as F, defineCustomElement as d };
 
-//# sourceMappingURL=p-214876f0.js.map
+//# sourceMappingURL=p-dd3fbdc0.js.map
