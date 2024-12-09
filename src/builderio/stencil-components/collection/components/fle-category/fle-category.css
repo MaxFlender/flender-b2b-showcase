@@ -1,5 +1,11 @@
 * {
-  font-family: inherit;
+  font-family: FlenderType, Arial, sans-serif;
+}
+
+h1, h2, h3, p {
+  font-family: FlenderType, Arial, sans-serif;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 :host {
@@ -7,6 +13,7 @@
   min-width: 12rem;
   padding: 0.5rem;
   color: white;
+  font-size: 18px;
   text-transform: uppercase;
   background-color: #227dc6;
 }

@@ -1,10 +1,10 @@
 import { p as proxyCustomElement, H, h, d as Host } from './p-d99ec579.js';
-import { d as defineCustomElement$5 } from './p-a5eca8f3.js';
-import { d as defineCustomElement$4 } from './p-76a96db3.js';
-import { d as defineCustomElement$3 } from './p-dd3fbdc0.js';
-import { d as defineCustomElement$2 } from './p-71fef340.js';
+import { d as defineCustomElement$5 } from './p-ca63c1ac.js';
+import { d as defineCustomElement$4 } from './p-8c303a2b.js';
+import { d as defineCustomElement$3 } from './p-7e082409.js';
+import { d as defineCustomElement$2 } from './p-666dbadd.js';
 
-const fleHeroBannerCss = "*{font-family:inherit}.fle-hero-banner{display:block;position:relative;width:100%;min-height:30rem}.fle-hero-banner .media{position:absolute;width:100%;height:100%}.fle-hero-banner .info{position:absolute;top:50%;transform:translateY(-50%)}@media (min-width: 992px){.fle-hero-banner .info{width:30%;max-width:550px}.fle-hero-banner .info.left{right:unset;left:10%}.fle-hero-banner .info.right{right:10%;left:unset}}";
+const fleHeroBannerCss = "*{font-family:FlenderType, Arial, sans-serif}h1,h2,h3,p{font-family:FlenderType, Arial, sans-serif;margin-block-start:0;margin-block-end:0}.fle-hero-banner{display:block;position:relative;width:100%;min-height:30rem}.fle-hero-banner .media{position:absolute;width:100%;height:100%}.fle-hero-banner .info{position:absolute;top:50%;transform:translateY(-50%)}@media (min-width: 992px){.fle-hero-banner .info{width:30%;max-width:550px}.fle-hero-banner .info.left{right:unset;left:10%}.fle-hero-banner .info.right{right:10%;left:unset}}";
 const FleHeroBannerStyle0 = fleHeroBannerCss;
 
 const FleHeroBanner$1 = /*@__PURE__*/ proxyCustomElement(class FleHeroBanner extends H {

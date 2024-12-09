@@ -1,5 +1,11 @@
 * {
-  font-family: inherit;
+  font-family: FlenderType, Arial, sans-serif;
+}
+
+h1, h2, h3, p {
+  font-family: FlenderType, Arial, sans-serif;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .fle-info {
@@ -12,7 +18,14 @@
   background-color: rgba(0, 62, 98, 0.4392156863);
   color: white;
   font-weight: 100;
+  gap: 16px;
 }
-.fle-info h1 {
+.fle-info h2 {
   color: #227dc6;
+  font-size: 30px;
+  font-weight: 100;
+}
+.fle-info p {
+  font-size: 18px;
+  font-weight: 100;
 }

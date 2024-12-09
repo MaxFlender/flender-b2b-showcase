@@ -1,3 +1,5 @@
+@import "builderio/stencil-components/flender-web-components/flender-web-components.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

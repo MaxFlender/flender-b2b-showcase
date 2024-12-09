@@ -1,6 +1,6 @@
 import { p as proxyCustomElement, H, h, d as Host } from './p-d99ec579.js';
 
-const fleGridViewCss = "*{font-family:inherit}:host{display:block}.fle-grid-view{display:grid;gap:8px;grid-template-columns:repeat(3, minmax(0, 1fr))}";
+const fleGridViewCss = "*{font-family:FlenderType, Arial, sans-serif}h1,h2,h3,p{font-family:FlenderType, Arial, sans-serif;margin-block-start:0;margin-block-end:0}:host{display:block}.fle-grid-view{display:grid;gap:8px;grid-template-columns:repeat(3, minmax(0, 1fr))}";
 const FleGridViewStyle0 = fleGridViewCss;
 
 const FleGridView$1 = /*@__PURE__*/ proxyCustomElement(class FleGridView extends H {

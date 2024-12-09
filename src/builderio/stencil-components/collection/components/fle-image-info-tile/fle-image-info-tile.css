@@ -1,5 +1,11 @@
 * {
-  font-family: inherit;
+  font-family: FlenderType, Arial, sans-serif;
+}
+
+h1, h2, h3, p {
+  font-family: FlenderType, Arial, sans-serif;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .fle-image-info-tile {

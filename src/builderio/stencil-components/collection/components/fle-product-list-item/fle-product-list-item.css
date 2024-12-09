@@ -1,5 +1,11 @@
 * {
-  font-family: inherit;
+  font-family: FlenderType, Arial, sans-serif;
+}
+
+h1, h2, h3, p {
+  font-family: FlenderType, Arial, sans-serif;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 :host {
@@ -14,10 +20,16 @@
   overflow: hidden;
   padding: 3rem;
   font-weight: 100;
-  gap: 10px;
+  gap: 16px;
 }
 .fle-product-list-item h3 {
   color: #227dc6;
+  font-size: 30px;
+  font-weight: 100;
+}
+.fle-product-list-item p {
+  font-size: 18px;
+  font-weight: 100;
 }
 .fle-product-list-item a,
 .fle-product-list-item a:link,

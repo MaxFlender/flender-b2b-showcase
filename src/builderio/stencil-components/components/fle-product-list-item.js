@@ -1,10 +1,10 @@
 import { p as proxyCustomElement, H, c as createEvent, h, d as Host } from './p-d99ec579.js';
 import { H as HASHTAG } from './p-3c82445c.js';
-import { d as defineCustomElement$4 } from './p-a5eca8f3.js';
-import { d as defineCustomElement$3 } from './p-76a96db3.js';
-import { d as defineCustomElement$2 } from './p-71fef340.js';
+import { d as defineCustomElement$4 } from './p-ca63c1ac.js';
+import { d as defineCustomElement$3 } from './p-8c303a2b.js';
+import { d as defineCustomElement$2 } from './p-666dbadd.js';
 
-const fleProductListItemCss = "*{font-family:inherit}:host{display:block}.fle-product-list-item{display:flex;flex-flow:column nowrap;justify-content:center;align-items:flex-start;overflow:hidden;padding:3rem;font-weight:100;gap:10px}.fle-product-list-item h3{color:#227dc6}.fle-product-list-item a,.fle-product-list-item a:link,.fle-product-list-item a:visited,.fle-product-list-item a:hover,.fle-product-list-item a:active{color:inherit;text-decoration:inherit;font-weight:inherit}";
+const fleProductListItemCss = "*{font-family:FlenderType, Arial, sans-serif}h1,h2,h3,p{font-family:FlenderType, Arial, sans-serif;margin-block-start:0;margin-block-end:0}:host{display:block}.fle-product-list-item{display:flex;flex-flow:column nowrap;justify-content:center;align-items:flex-start;overflow:hidden;padding:3rem;font-weight:100;gap:16px}.fle-product-list-item h3{color:#227dc6;font-size:30px;font-weight:100}.fle-product-list-item p{font-size:18px;font-weight:100}.fle-product-list-item a,.fle-product-list-item a:link,.fle-product-list-item a:visited,.fle-product-list-item a:hover,.fle-product-list-item a:active{color:inherit;text-decoration:inherit;font-weight:inherit}";
 const FleProductListItemStyle0 = fleProductListItemCss;
 
 const FleProductListItem$1 = /*@__PURE__*/ proxyCustomElement(class FleProductListItem extends H {
@@ -21,7 +21,7 @@ const FleProductListItem$1 = /*@__PURE__*/ proxyCustomElement(class FleProductLi
         this.mediaAltText = undefined;
     }
     render() {
-        return (h(Host, { key: '03039d81d688906a62bb21388765a741485eaa04', class: "fle-product-list-item" }, h("fle-category", { key: '283817236895b2dd0a301198ebfc4478015979f4' }, this.category), h("h3", { key: 'fa51a311b190bba914366ae905cecfc9e26c0862' }, this.headline), h("fle-media", { key: '1ca7c0dcb366048cecf5943e22a6223a5fac0f1f', "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), h("p", { key: 'a293d42d1703966854f79ffc30d376aaaa2bf4d1' }, this.description), h("fle-button", { key: 'bce08bcb190db0e59c43728a87dcd56386bd8d1c', onButtonClicked: () => this.onClicked() }, this.ctaText)));
+        return (h(Host, { key: '03039d81d688906a62bb21388765a741485eaa04', class: "fle-product-list-item" }, this.category && h("fle-category", { key: '5d08f5740db4e875b4d66042424fa99a4d240b17' }, this.category), this.headline && h("h3", { key: '604d2c76e226cf70e84344633873797bedf4d801' }, this.headline), this.mediaUrl && h("fle-media", { key: '2688b2bb6b5eda55315fe853815aa8c047eb30cc', "media-url": this.mediaUrl, "media-alt-text": this.mediaAltText }), this.description && h("p", { key: '8d026648336a9530eb0daac9671e2a72b349145b' }, this.description), h("fle-button", { key: '7fe058e5ecbb58943b4ce711340403cf59d5d6ac', onButtonClicked: () => this.onClicked() }, this.ctaText)));
     }
     onClicked() {
         this.productClicked.emit();

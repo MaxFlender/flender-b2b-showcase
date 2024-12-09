@@ -1,10 +1,10 @@
 import { p as proxyCustomElement, H, h, d as Host } from './p-d99ec579.js';
-import { d as defineCustomElement$5 } from './p-a5eca8f3.js';
-import { d as defineCustomElement$4 } from './p-76a96db3.js';
-import { d as defineCustomElement$3 } from './p-dd3fbdc0.js';
-import { d as defineCustomElement$2 } from './p-71fef340.js';
+import { d as defineCustomElement$5 } from './p-ca63c1ac.js';
+import { d as defineCustomElement$4 } from './p-8c303a2b.js';
+import { d as defineCustomElement$3 } from './p-7e082409.js';
+import { d as defineCustomElement$2 } from './p-666dbadd.js';
 
-const fleImageInfoTileCss = "*{font-family:inherit}.fle-image-info-tile{display:flex;flex-flow:column nowrap;justify-content:space-around;align-items:center}@media (min-width: 992px){.fle-image-info-tile{max-width:100%;flex-flow:row nowrap;padding-left:15%;padding-right:15%;gap:32px}.fle-image-info-tile.reverse{flex-direction:row-reverse}}@media (min-width: 992px){.fle-image-info-tile .media{flex:1 1 0}}.fle-image-info-tile .info{background-color:unset;color:black}@media (min-width: 992px){.fle-image-info-tile .info{flex:1 1 0}}";
+const fleImageInfoTileCss = "*{font-family:FlenderType, Arial, sans-serif}h1,h2,h3,p{font-family:FlenderType, Arial, sans-serif;margin-block-start:0;margin-block-end:0}.fle-image-info-tile{display:flex;flex-flow:column nowrap;justify-content:space-around;align-items:center}@media (min-width: 992px){.fle-image-info-tile{max-width:100%;flex-flow:row nowrap;padding-left:15%;padding-right:15%;gap:32px}.fle-image-info-tile.reverse{flex-direction:row-reverse}}@media (min-width: 992px){.fle-image-info-tile .media{flex:1 1 0}}.fle-image-info-tile .info{background-color:unset;color:black}@media (min-width: 992px){.fle-image-info-tile .info{flex:1 1 0}}";
 const FleImageInfoTileStyle0 = fleImageInfoTileCss;
 
 const FleImageInfoTile$1 = /*@__PURE__*/ proxyCustomElement(class FleImageInfoTile extends H {
