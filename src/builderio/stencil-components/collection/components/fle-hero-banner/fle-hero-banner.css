@@ -24,7 +24,7 @@ h1, h2, h3, p {
   top: 50%;
   transform: translateY(-50%);
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .fle-hero-banner .info {
     width: 30%;
     max-width: 550px;
